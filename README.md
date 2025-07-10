@@ -4,28 +4,32 @@ A simple movie app using Clean Architecture + MVVM
 
 - Displays a grid of popular movies (poster + title).
 - Navigates to a detailed screen with:
-   Poster image
-Movie title
-Release date
-Overview
-Favorite button to toggle state (stored in-memory/UserDefaults).
-Handles loading and error states gracefully.
-🏗️ Architecture
+  - Poster image
+  - Movie title
+  - Release date
+  - Overview
+- Favorite button to toggle state (stored in-memory/UserDefaults).
+- Handles loading and error states gracefully.
+
+
+# 🏗️ Architecture
 
 🔷 Clean Architecture Layers
-Presentation Layer
-MoviesListViewController, MovieDetailsViewController
-ViewModels: MoviesListViewModel, MovieDetailsViewModel
-Coordinator: MoviesCoordinator
-Domain Layer
-UseCases: FetchMoviesUseCase, FetchMovieDetailsUseCase
-Data Layer
-Repository protocols + implementations: MoviesRepository, MoviesRepositoryImpl
-Remote Data Sources using APIClient
-Core Layer
-APIClient: generic network layer using URLSession
-Endpoints: constructs TMDB API requests
-🔷 Design Patterns Used
+1- Presentation Layer
+ - MoviesListViewController, MovieDetailsViewController
+ - ViewModels: MoviesListViewModel, MovieDetailsViewModel
+ 
+2- Domain Layer
+ - Entities: MoviesResponse
+ - UseCases: FetchMoviesUseCase, FetchMovieDetailsUseCase
+ - Repository protocols: MoviesRepository, MovieDetailsRepository
+
+3- Data Layer
+ - APIClient: generic network layer using Alamofire
+ - Storage: FavoritesLocalDataSource
+ - Repository implementations: MoviesRepositoryImpl, MovieDetailsRepositoryImpl
+
+# 🔷 Design Patterns Used
 MVVM for separation of UI logic and business logic.
 Coordinator Pattern for navigation handling.
 Dependency Injection using AppDIContainer.
@@ -43,13 +47,13 @@ Install dependencies via SPM (already configured in Xcode).
 Build & run on iOS Simulator or device.
 
 
-🎯 Trade-offs & Notes
-
+# 🎯 Trade-offs & Notes
 
 Coordinator Pattern was used for navigation to decouple ViewControllers.
 Error Handling and Loading States are implemented via closures in ViewModels for clean UI binding.
-Used UIKit as per requirement. SwiftUI can be integrated in future for previews and composability.
-👨‍💻 Author
+Used UIKit as per requirement.
 
+
+# 👨‍💻 Author
 Name: Mina Ead
 LinkedIn: www.linkedin.com/in/mina-eid-254bb0177
