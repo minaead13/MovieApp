@@ -15,6 +15,7 @@ A simple movie app using Clean Architecture + MVVM
 # 🏗️ Architecture
 
 🔷 Clean Architecture Layers
+
 1- Presentation Layer
  - MoviesListViewController, MovieDetailsViewController
  - ViewModels: MoviesListViewModel, MovieDetailsViewModel
