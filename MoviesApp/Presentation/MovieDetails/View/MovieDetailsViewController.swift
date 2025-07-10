@@ -34,6 +34,7 @@ class MovieDetailsViewController: UIViewController {
     private func setupBindings() {
         
         viewModel.$movie
+            .compactMap { $0 } 
             .receive(on: DispatchQueue.main)
             .sink { [weak self] movie in
                 self?.configureUI(with: movie)
