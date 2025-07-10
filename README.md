@@ -42,9 +42,9 @@ Kingfisher for asynchronous image loading.
 🚀 Setup & Run
 
 Clone the repository:
-git clone https://github.com/yourusername/MovieExplorerApp.git
-cd MovieExplorerApp
-Install dependencies via SPM (already configured in Xcode).
+git clone https://github.com/minaead13/MovieApp.
+Open the project in Xcode.
+Ensure all dependencies are fetched via Swift Package Manager.
 Build & run on iOS Simulator or device.
 
 
